@@ -9,8 +9,10 @@ class OwnersController < ApplicationController
   end
 
   def create
-    owner = Owner.create(owner_params)
+    owner = Owner.new(owner_params)
+    owner.save
     redirect_to owner_path(owner)
+
   end
 
   def show
